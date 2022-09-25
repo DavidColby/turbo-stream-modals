@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The code in this repo exists as a companion to the tutorial originally published on [my blog](https://www.colby.so/posts/building-modal-forms-with-turbo-streams).
 
-Things you may want to cover:
+View the complete code for the tutorial on the [complete branch](https://github.com/DavidColby/turbo-stream-modals/tree/complete), or clone down this repo and then follow along with the tutorial.
 
-* Ruby version
+To run this code locally, after cloning:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle install
+yarn install
+rails db:create db:migrate
+bin/dev
+```
