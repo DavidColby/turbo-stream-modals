@@ -22,14 +22,16 @@ class CardsController < ApplicationController
   # POST /cards or /cards.json
   def create
     @card = Card.new(card_params)
-
+  
     respond_to do |format|
       if @card.save
         format.html { redirect_to card_url(@card), notice: "Card was successfully created." }
         format.json { render :show, status: :created, location: @card }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @card.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('card-form', partial: 'form'), status: :unprocessable_entity }
       end
     end
   end
